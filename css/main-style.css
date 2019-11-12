@@ -1,0 +1,64 @@
+body {
+    background-color:#FFB548;
+    color:#161C24;
+    overflow: hidden;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.navbar {
+    align-items: start;
+}
+.container{
+    position: relative;
+    z-index: 9;
+}
+
+#app {
+    position: absolute;
+    left:0;
+    top:0;
+  }
+  
+  .graphic-container {
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .graphic-container canvas, .graphic-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #app{
+      opacity: 0.2;
+  }
+
+  .top-gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(255,181,72,1) 0%, rgba(255,181,72,0) 100%);
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+  }
+
+.full-height{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    color:#161C24;
+    text-decoration: none;
+}
+a:hover {
+    color:#2E3339;
+    text-decoration: none;
+}
+
+
+  
+  
