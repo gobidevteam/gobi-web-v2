@@ -1,64 +1,785 @@
+
 body {
-    background-color:#FFB548;
-    color:#161C24;
-    overflow: hidden;
-    font-family: 'Nunito Sans', sans-serif;
-}
-.navbar {
-    align-items: start;
-}
-.container{
-    position: relative;
-    z-index: 9;
+  background-color:#FFB548;
+  color:#2E3339;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-#app {
-    position: absolute;
-    left:0;
-    top:0;
-  }
-  
-  .graphic-container {
-    position: absolute;
-    top:0;
-    left:0;
-  }
-  .graphic-container canvas, .graphic-container svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+a, a:hover{
+  text-decoration: none;
+  color: inherit;
+}
 
-  #app{
-      opacity: 0.2;
-  }
 
-  .top-gradient{
+.navbar-light .navbar-nav .nav-link{
+  color:#161C24;
+}
+
+.huge-text {
+  font-size: 3.5rem;
+}
+.gigantic-text {
+  font-size: 4.5rem;
+}
+.gigantic-text a {
+  color:#2E3339;
+  text-decoration: none;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #2E3339;
+  border-color: #2E3339;
+}
+
+.btn-white {
+  color: #2E3339;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-green{
+  color: #fff;
+  background-color: #22B573;
+  border-color: #22B573;
+}
+
+.btn-green:hover{
+  color: #fff;
+  background-color: #22B573;
+  border-color: #22B573;
+}
+
+.btn-lg{
+  font-size:1rem;
+  font-weight: 100;
+}
+
+
+
+.btn {
+  border-radius:2px;
+}
+
+.section-two{
+  background-image: url(/assets/sectiontwo-background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.section-one{
+  background-image: url(/assets/sectionone-background.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+
+/* car */
+#project-slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+
+}
+
+#project-slider .project-card {
+  position: absolute;
+  padding: 0;
+  overflow: hidden;
+
+}
+#project-slider .prev-project {
+  z-index: 15;
+  left: 20%;
+  transform: translateY(0px) translateX(-50%);
+}
+
+#project-slider .selected-project {
+  z-index: 20;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%) scale(1.2);
+}
+
+#project-slider .next-project{
+  z-index: 15;
+  left: 80%;
+  transform: translateY(0px) translateX(-50%);
+}
+#project-slider .card, #project-slider .card-img {
+  border: none;
+  border-radius:2px;
+}
+
+#project-slider .card-img-overlay {
+  padding: 0;
+}
+.card-logo{
+  height: 32px;
+  margin-bottom:16px;
+}
+
+#project-slider .card-title{
+  margin-bottom:8px;
+  font-weight: 700;
+}
+
+#project-slider .card-text{
+  font-weight: lighter;
+}
+
+
+#project-slider .project-card.selected-project {
+  box-shadow: 0 16px 32px -10px #310C0D;
+}
+
+
+.content-to-bottom{
+  position: absolute;
+  bottom: 0;
+  padding:1.25rem;
+}
+/* car */
+
+
+/* testimonial */
+.testimonial-slider{
     position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(45deg, rgba(255,181,72,1) 0%, rgba(255,181,72,0) 100%);
+    top: 25%;
     width: 100%;
-    height: 100vh;
-    z-index: 2;
+    left: 48px;
+}
+
+
+.testimonial-slider .card {
+  border:0;
+  border-radius:0;
+}
+
+.testimonial-slider .card .card-img{
+  border-radius:0;
+}
+
+.head-block{
+    min-height: 500px;
+    border: 5px solid;
+    padding: 16px;
   }
 
-.full-height{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.white-card{
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 16px 32px -10px rgba(144,44,46,0.50), 0 0px 14px -3px rgba(74, 22, 23, 0.14), 30px 0px 0px -15px #fff, -30px 0px 0px -15px #fff;
+}
+
+.testimonial-slider .card-body{
+  padding:2rem;
+}
+
+.slider-indicator{
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.slider-controls li {
+  box-sizing: content-box;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 14px;
+  height: 14px;
+  margin-right: 2px;
+  margin-left: 2px;
+  text-indent: -999px;
+  cursor: pointer;
+  border: 2px solid #2E3339;
+  transition: opacity .6s ease;
+}
+
+.slider-controls{
+  position: absolute;
+  right: 0;
+  top: 100%;
+  left: 0;
+  z-index: 15;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider-controls .active {
+  background-color:#2E3339;
+}
+
+.prev:before {
+  content:'';
+  background-image:url('/assets/prev-arrow.svg');
+  background-size:cover;
+  position:absolute;
+  height: 48px;
+  width:48px;
+}
+.next:after {
+  content:'';
+  background-image:url('/assets/next-arrow.svg');
+  background-size:cover;
+  position:absolute;
+  height: 48px;
+  width:48px;
+}
+
+.prev, .next{
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: block;
+  z-index: 9999;
+}
+
+
+/* testimonial */
+
+/* blog banner */
+.blog-banner {
+  background-color: #161C24;
+  background-image: url(/assets/sectionone-background.png);
+  background-size: cover;
+  background-position: top center;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* blog banner end */
+
+
+.banner-section{
+  min-height: 256px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+/*  footer */
+footer {
+  background-color:#fff;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer ul li {
+  margin-right: 1.5rem;
+}
+
+footer ul li a, footer ul li a:hover  {
+  color: #2E3339;
+  text-decoration: none;
+}
+/*  footer */
+
+.text-decoration-bottom:after, .text-decoration-bottom-left:after {
+  content: '';
+  background-image: url(/assets/text-decoration-bottom.svg);
+  background-repeat: no-repeat;
+  height: 12px;
+  background-size: contain;
+  background-position: top center;
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.text-decoration-bottom-left:after{
+  background-position: top left;
+}
+
+.dark-background {
+  background-color: #2E3339;
+}
+
+.blue-background{
+  background-color:#0D59D0;
+}
+
+.green-background{
+  background-color:#22B573;
+}
+
+.white-background {
+  background-color:#ffffff;
+}
+.gobi-yellow-background {
+  background-color:#FFB548;
+}
+
+.work-item{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  color:#fff;
+  text-align:left;
+  overflow: hidden;
+  min-height: 810px;
+}
+
+.work-item p {
+  font-weight: 100;
+}
+
+.work-item-subj{
+  opacity: 0.6;
+  color:#fff;
+
+}
+
+.tag {
+  padding: 4px 12px;
+  border-radius: 36px;
+  font-size: .8rem;
+}
+ 
+
+.tag-white-transparent{
+  background-color: rgba(255,255,255,0.50);
+  color:#fff;
+
+}
+
+.btn-icon{
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  background-image:url(/assets/next-arrow-white.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+
+.btn-outline-light:hover {
+  color:#fff;
+  background-color: transparent;
+  border-color: #ffff;
+  opacity: 0.5;
+   transition: opacity .6s ease;
+}
+
+.work-image {
+  background-size:contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+
+
+.top-right{
+  background-position: top right;
+  top:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+}
+
+.top-left{
+  background-position: top left;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+.layer-bottom{
+  z-index:1000;
+}
+.layer-middle{
+  z-index:1050;
+}
+.layer-top{
+  z-index: 1100;
+}
+
+.layer-most-top{
+  z-index: 9000;
+}
+
+
+.contact-section{
+  background-color:#fff;
+  background-image:url(/assets/contact-background.jpg);
+  background-size:cover;
+}
+
+
+.custom-form-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form-field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border: 1px solid #E4E4E4;
+  border-bottom: 2px solid #E4E4E4;
+  border-radius: 2px 2px 0 0;
+  outline: 0;
+  font-size: 14px;
+  color: #212121;
+  padding: 8px 4px;
+  background: transparent;
+  transition: border-color 0.2s;
+  height: 64px;
+}
+
+.form-field::placeholder {
+  color: transparent;
+}
+
+.form-field:placeholder-shown ~ .form-label {
+  font-size: 14px;
+    cursor: text;
+    top: 32px;
+
+}
+
+.custom-form-group .form-label,
+.form-field:focus ~ .form-label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #2E3339;
+
+}
+
+.form-field:focus ~ .form-label {
+  color: #22B573;
+ 
+  
+}
+
+.form-field:focus {
+  border-color:#22B573;
+}
+
+
+
+
+
+/* custom checkbox */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  border: 1px solid #2E3339;
+  padding: 0px 16px;
+  height: 34px;
+  text-align: center;
+  border-radius:36px;
+}
+
+.checkbox-text{
+  font-size: .9rem;
+  vertical-align: middle;
+  position: relative;
+  z-index:1000;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container  input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 900;
+  border: 1px solid transparent;
+  border-radius: 36px;
+
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: transparent;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark{
+  background-color: transparent;
+  border: 1px solid #22B573;
+  border-radius: 36px;
+  box-shadow: 0px 0px 0px 1px #22B573;
+}
+
+.checkbox-container input:checked+.checkbox-text{
+  color: #22B573;
+}
+
+
+
+/* custom checkbox end */
+
+
+
+
+/* custom range slider */
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 4px; /* Specified height */
+  background: #E4E4E4; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 19px; /* Set a specific slider handle width */
+  height: 19px; /* Slider handle height */
+  background: #fff; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border:4px solid #22B573;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.39);
+}
+
+.slider::-moz-range-thumb {
+  width: 19px; /* Set a specific slider handle width */
+  height: 19px; /* Slider handle height */
+  background: #fff; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border:4px solid #22B573;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.39);
+
+}
+
+#budget {
+  color: #22B573;
+  margin-left:16px;
+}
+
+#budget:before{
+  content:'$';
+  margin-right: 4px;
+
+}
+
+/* custom range slider end */
+
+
+.file-input{
+  opacity: 0;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+.file-input:hover, .file-input-container:hover{
+  cursor: pointer;
+}
+
+.file-input-container{
+    position: absolute;
+    right: 10px;
+    top: 32px;
+    display: inherit;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.file-icon {
+  z-index: 1000;
+  content: '';
+  background-image: url(/assets/paper-clip.svg);
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.file-icon:hover{
+  opacity: 0.5;
+}
+
+
+
+
+.upload-progress-container{
+  height:36px;
+  width: 100%;
+  border-radius:2px;
+  padding:0.5rem 1rem;
+  display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-a {
-    color:#161C24;
-    text-decoration: none;
+.green-progress{
+  background-color:#D4F0E3;
+  color:#22B573;
+  font-size:0.9rem;
+
 }
-a:hover {
-    color:#2E3339;
-    text-decoration: none;
+
+.btn-close{
+  height:24px;
+  width:24px;
+  background-color:transparent;
+  background-image: url(/assets/close-btn.svg);
+  background-size:contain;
+  border: none;
+  outline: none;
+
+}
+
+.btn-close:hover{
+ opacity:0.5;
+ transition:opacity  1s;
+
 }
 
 
-  
-  
+.progress-action{
+  display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/* custom checkbox */
+
+.custom-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox-container  input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checksign {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius:4px;
+  border:1px solid #212121;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox-container :hover input ~ .checksign {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox-container  input:checked ~ .checksign {
+  background-color: #D4F0E3;
+  border: 1px solid #22B573;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checksign:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox-container  input:checked ~ .checksign:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox-container  .checksign:after {
+  width: 20px;
+  height: 20px;
+  background-image: url(/assets/check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+/* custom checkbox end */
